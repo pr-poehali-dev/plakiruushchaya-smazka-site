@@ -111,15 +111,12 @@ export default function Index() {
         style={{ background: "linear-gradient(180deg, rgba(10,15,30,0.97) 0%, transparent 100%)" }}
       >
         <div className="flex items-center gap-3">
-          <div
-            className="w-8 h-8 flex items-center justify-center"
-            style={{
-              background: "linear-gradient(135deg, #f97316, #fb923c)",
-              clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-            }}
-          >
-            <Icon name="Droplets" size={14} color="#ffffff" />
-          </div>
+          <img
+            src="https://cdn.poehali.dev/projects/613015e9-5a04-4be5-8e21-6245ef31f3c9/bucket/2ef6041d-b889-4046-8136-2168b85d4197.jpg"
+            alt="AvtoVitamin"
+            className="h-10 w-10 object-contain"
+            style={{ borderRadius: "4px" }}
+          />
           <span
             className="font-bold tracking-widest uppercase text-sm"
             style={{ fontFamily: "'Oswald', sans-serif", color: "var(--gold)" }}
