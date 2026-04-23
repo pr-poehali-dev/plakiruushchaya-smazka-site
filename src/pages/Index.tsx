@@ -124,7 +124,7 @@ export default function Index() {
             className="font-bold tracking-widest uppercase text-sm"
             style={{ fontFamily: "'Oswald', sans-serif", color: "var(--gold)" }}
           >
-            ProtectLube
+            AvtoVitamin
           </span>
         </div>
 
@@ -174,17 +174,16 @@ export default function Index() {
               className="text-6xl md:text-8xl font-bold uppercase leading-none mb-6 animate-fade-in-up delay-200"
               style={{ fontFamily: "'Oswald', sans-serif", lineHeight: 0.9 }}
             >
-              <span className="block text-white">Плакирующая</span>
-              <span className="block gold-text">Смазывающая</span>
-              <span className="block text-white">Композиция</span>
+              <span className="block text-white">Безызносные</span>
+              <span className="block gold-text">Решения</span>
+              <span className="block text-white" style={{ fontSize: "0.55em", lineHeight: 1.3 }}>для «Двигателей<br/>Внутреннего Сгорания»</span>
             </h1>
 
             <p
               className="text-lg max-w-xl mb-10 animate-fade-in-up delay-300"
               style={{ color: "rgba(212, 201, 176, 0.7)", lineHeight: 1.7, fontWeight: 300 }}
             >
-              Создаёт защитный металлокерамический слой на поверхностях трения.
-              Снижает износ до&nbsp;70% и продлевает ресурс двигателя в&nbsp;2–3 раза.
+              Сокращение потребления топлива от&nbsp;8 до&nbsp;20%
             </p>
 
             <div className="flex items-center gap-4 animate-fade-in-up delay-400">
@@ -194,23 +193,6 @@ export default function Index() {
               <button className="btn-outline-gold" onClick={() => scrollToSection(1)}>
                 О продукте
               </button>
-            </div>
-
-            <div className="flex gap-12 mt-16 animate-fade-in-up delay-500">
-              {[
-                { val: "70%", label: "снижение трения" },
-                { val: "3×", label: "ресурс мотора" },
-                { val: "20+", label: "лет на рынке" },
-              ].map((s, i) => (
-                <div key={i}>
-                  <div className="text-3xl font-bold gold-text" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                    {s.val}
-                  </div>
-                  <div className="text-xs tracking-wider uppercase mt-1" style={{ color: "var(--steel)" }}>
-                    {s.label}
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
 
