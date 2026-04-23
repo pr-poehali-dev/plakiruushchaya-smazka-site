@@ -517,9 +517,9 @@ export default function Index() {
 
                 <div className="flex flex-col justify-center gap-6">
                   {[
-                    { icon: "Phone", label: "Телефон", val: "+7 (800) 000-00-00" },
-                    { icon: "Mail", label: "Email", val: "info@protectlube.ru" },
-                    { icon: "MapPin", label: "Адрес", val: "Москва, ул. Промышленная, 12" },
+                    { icon: "Phone", label: "Телефон", val: "+7 988 525 52 82" },
+                    { icon: "Mail", label: "Email", val: "5sveteslav5@gmail.com" },
+                    { icon: "MapPin", label: "Адрес", val: "Краснодарский край, Северский район, ул. Вокзальная, 58" },
                     { icon: "Clock3", label: "Режим работы", val: "Пн–Пт: 9:00 – 18:00" },
                   ].map((c, i) => (
                     <div key={i} className="flex items-start gap-4">
