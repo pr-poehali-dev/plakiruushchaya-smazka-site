@@ -108,17 +108,17 @@ export default function Index() {
       {/* Fixed Navigation */}
       <nav
         className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-10 py-5"
-        style={{ background: "linear-gradient(180deg, rgba(15,15,15,0.95) 0%, transparent 100%)" }}
+        style={{ background: "linear-gradient(180deg, rgba(10,15,30,0.97) 0%, transparent 100%)" }}
       >
         <div className="flex items-center gap-3">
           <div
             className="w-8 h-8 flex items-center justify-center"
             style={{
-              background: "linear-gradient(135deg, #C9A84C, #E8C96A)",
+              background: "linear-gradient(135deg, #f97316, #fb923c)",
               clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
             }}
           >
-            <Icon name="Droplets" size={14} color="#0F0F0F" />
+            <Icon name="Droplets" size={14} color="#ffffff" />
           </div>
           <span
             className="font-bold tracking-widest uppercase text-sm"
@@ -155,7 +155,7 @@ export default function Index() {
         <section
           className="h-scroll-section scanlines"
           style={{
-            background: `linear-gradient(135deg, rgba(15,15,15,0.85) 0%, rgba(15,15,15,0.6) 50%, rgba(10,10,10,0.85) 100%), url(${BG_IMAGE}) center/cover no-repeat`,
+            background: `linear-gradient(135deg, rgba(10,15,30,0.85) 0%, rgba(10,15,30,0.6) 50%, rgba(5,10,25,0.88) 100%), url(${BG_IMAGE}) center/cover no-repeat`,
             scrollSnapAlign: "start",
           }}
         >
@@ -181,7 +181,7 @@ export default function Index() {
 
             <p
               className="text-lg max-w-xl mb-10 animate-fade-in-up delay-300"
-              style={{ color: "rgba(212, 201, 176, 0.7)", lineHeight: 1.7, fontWeight: 300 }}
+              style={{ color: "rgba(232,240,248,0.7)", lineHeight: 1.7, fontWeight: 300 }}
             >
               Сокращение потребления топлива от&nbsp;8 до&nbsp;20%
             </p>
@@ -208,11 +208,11 @@ export default function Index() {
         <section
           className="h-scroll-section"
           style={{
-            background: `linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(20,18,14,0.92) 100%), url(${BG_IMAGE}) center/cover no-repeat`,
+            background: `linear-gradient(135deg, rgba(10,15,30,0.95) 0%, rgba(15,25,50,0.92) 100%), url(${BG_IMAGE}) center/cover no-repeat`,
             scrollSnapAlign: "start",
           }}
         >
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.05) 0%, transparent 60%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 70% 50%, rgba(59,130,246,0.08) 0%, transparent 60%)" }} />
 
           <div className="relative z-10 flex flex-col justify-center h-full px-16 md:px-24">
             <div className="heading-line mb-3">
@@ -273,11 +273,11 @@ export default function Index() {
                 <div
                   key={i}
                   className="spec-card p-5 flex flex-col"
-                  style={{ borderColor: "rgba(201,168,76,0.25)" }}
+                  style={{ borderColor: "rgba(59,130,246,0.25)" }}
                 >
-                  <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: "1px solid rgba(201,168,76,0.15)" }}>
+                  <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: "1px solid rgba(59,130,246,0.15)" }}>
                     <div className="w-9 h-9 rounded flex items-center justify-center flex-shrink-0"
-                      style={{ background: "rgba(201,168,76,0.12)", border: "1px solid rgba(201,168,76,0.3)" }}>
+                      style={{ background: "rgba(249,115,22,0.12)", border: "1px solid rgba(249,115,22,0.3)" }}>
                       <Icon name={p.icon} size={18} color="var(--gold)" />
                     </div>
                     <div>
@@ -287,12 +287,12 @@ export default function Index() {
                   </div>
                   <div className="text-xs font-semibold uppercase tracking-wide mb-1 text-white" style={{ fontFamily: "'Oswald', sans-serif" }}>{p.title}</div>
                   <div className="text-xs mb-3" style={{ color: "var(--gold)", opacity: 0.8 }}>{p.apply}</div>
-                  <p className="text-xs leading-relaxed mb-4 flex-1" style={{ color: "rgba(212,201,176,0.6)" }}>{p.desc}</p>
+                  <p className="text-xs leading-relaxed mb-4 flex-1" style={{ color: "rgba(232,240,248,0.6)" }}>{p.desc}</p>
                   <div className="space-y-1.5">
                     {p.perks.map((perk, j) => (
                       <div key={j} className="flex items-start gap-2">
                         <Icon name="Check" size={10} color="var(--gold)" />
-                        <span className="text-xs" style={{ color: "rgba(212,201,176,0.75)" }}>{perk}</span>
+                        <span className="text-xs" style={{ color: "rgba(232,240,248,0.75)" }}>{perk}</span>
                       </div>
                     ))}
                   </div>
@@ -308,7 +308,7 @@ export default function Index() {
           style={{ background: "var(--dark-bg)", scrollSnapAlign: "start" }}
         >
           <div className="absolute inset-0 grid-bg opacity-20" />
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 30% 60%, rgba(201,168,76,0.05) 0%, transparent 60%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 30% 60%, rgba(59,130,246,0.08) 0%, transparent 60%)" }} />
 
           <div className="relative z-10 flex flex-col justify-center h-full px-16 md:px-24">
             <div className="heading-line mb-4">
@@ -328,7 +328,7 @@ export default function Index() {
                 <div key={i} className="spec-card p-6">
                   <div
                     className="w-10 h-10 rounded flex items-center justify-center mb-4"
-                    style={{ background: "rgba(201,168,76,0.1)", border: "1px solid rgba(201,168,76,0.2)" }}
+                    style={{ background: "rgba(249,115,22,0.1)", border: "1px solid rgba(249,115,22,0.2)" }}
                   >
                     <Icon name={spec.icon} size={20} color="var(--gold)" />
                   </div>
@@ -344,11 +344,11 @@ export default function Index() {
 
             <div
               className="mt-10 max-w-5xl p-5 flex items-center justify-between"
-              style={{ background: "rgba(201,168,76,0.05)", border: "1px solid rgba(201,168,76,0.15)" }}
+              style={{ background: "rgba(59,130,246,0.05)", border: "1px solid rgba(59,130,246,0.15)" }}
             >
               <div className="flex items-center gap-3">
                 <Icon name="Award" size={20} color="var(--gold)" />
-                <span className="text-sm" style={{ color: "rgba(212,201,176,0.8)" }}>
+                <span className="text-sm" style={{ color: "rgba(232,240,248,0.8)" }}>
                   Соответствует требованиям ГОСТ Р 51634, ISO 6743-99
                 </span>
               </div>
@@ -363,11 +363,11 @@ export default function Index() {
         <section
           className="h-scroll-section"
           style={{
-            background: `linear-gradient(135deg, rgba(12,12,12,0.90) 0%, rgba(15,15,15,0.85) 100%), url(${BG_IMAGE}) center/cover no-repeat`,
+            background: `linear-gradient(135deg, rgba(8,13,28,0.92) 0%, rgba(10,20,45,0.88) 100%), url(${BG_IMAGE}) center/cover no-repeat`,
             scrollSnapAlign: "start",
           }}
         >
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 80% 30%, rgba(201,168,76,0.07) 0%, transparent 50%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 80% 30%, rgba(249,115,22,0.07) 0%, transparent 50%)" }} />
 
           <div className="relative z-10 flex flex-col justify-center h-full px-16 md:px-24">
             <div className="heading-line mb-4">
@@ -389,14 +389,14 @@ export default function Index() {
                   className="relative p-6"
                   style={{
                     background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
-                    border: "1px solid rgba(201,168,76,0.15)",
+                    border: "1px solid rgba(59,130,246,0.15)",
                   }}
                 >
                   <span
                     className="absolute top-4 right-4 text-xs px-2 py-0.5 tracking-wider uppercase"
                     style={{
-                      background: "rgba(201,168,76,0.1)",
-                      border: "1px solid rgba(201,168,76,0.3)",
+                      background: "rgba(249,115,22,0.1)",
+                      border: "1px solid rgba(249,115,22,0.3)",
                       color: "var(--gold)",
                       fontFamily: "'Oswald', sans-serif",
                       fontSize: "10px",
@@ -407,7 +407,7 @@ export default function Index() {
 
                   <div
                     className="w-12 h-12 flex items-center justify-center mb-5"
-                    style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.2)" }}
+                    style={{ background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.2)" }}
                   >
                     <Icon name={app.icon} size={24} color="var(--gold)" />
                   </div>
@@ -415,7 +415,7 @@ export default function Index() {
                   <h3 className="text-lg font-bold uppercase mb-3" style={{ fontFamily: "'Oswald', sans-serif", color: "#fff" }}>
                     {app.title}
                   </h3>
-                  <p className="text-sm leading-relaxed" style={{ color: "rgba(212,201,176,0.6)", fontWeight: 300 }}>
+                  <p className="text-sm leading-relaxed" style={{ color: "rgba(232,240,248,0.6)", fontWeight: 300 }}>
                     {app.desc}
                   </p>
                 </div>
@@ -430,7 +430,7 @@ export default function Index() {
           style={{ background: "var(--dark-bg)", scrollSnapAlign: "start" }}
         >
           <div className="absolute inset-0 grid-bg opacity-10" />
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 50% 50%, rgba(59,130,246,0.08) 0%, transparent 70%)" }} />
 
           <div className="relative z-10 flex items-center justify-center h-full px-8">
             <div className="w-full max-w-4xl">
@@ -448,7 +448,7 @@ export default function Index() {
                 >
                   Напишите <span className="gold-text">нам</span>
                 </h2>
-                <p className="mt-4 text-sm" style={{ color: "rgba(212,201,176,0.5)" }}>
+                <p className="mt-4 text-sm" style={{ color: "rgba(232,240,248,0.5)" }}>
                   Ответим в течение одного рабочего дня
                 </p>
               </div>
@@ -456,7 +456,7 @@ export default function Index() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div
                   className="p-8 relative corner-tl corner-br"
-                  style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(201,168,76,0.2)" }}
+                  style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(59,130,246,0.2)" }}
                 >
                   <div className="space-y-4">
                     {[
@@ -477,12 +477,12 @@ export default function Index() {
                           className="w-full px-4 py-3 text-sm outline-none transition-all"
                           style={{
                             background: "rgba(255,255,255,0.04)",
-                            border: "1px solid rgba(201,168,76,0.2)",
-                            color: "#D4C9B0",
+                            border: "1px solid rgba(59,130,246,0.2)",
+                            color: "#e8f0f8",
                             fontFamily: "'Roboto', sans-serif",
                           }}
-                          onFocus={e => (e.target.style.borderColor = "rgba(201,168,76,0.6)")}
-                          onBlur={e => (e.target.style.borderColor = "rgba(201,168,76,0.2)")}
+                          onFocus={e => (e.target.style.borderColor = "rgba(249,115,22,0.6)")}
+                          onBlur={e => (e.target.style.borderColor = "rgba(59,130,246,0.2)")}
                         />
                       </div>
                     ))}
@@ -500,12 +500,12 @@ export default function Index() {
                         className="w-full px-4 py-3 text-sm outline-none resize-none transition-all"
                         style={{
                           background: "rgba(255,255,255,0.04)",
-                          border: "1px solid rgba(201,168,76,0.2)",
-                          color: "#D4C9B0",
+                          border: "1px solid rgba(59,130,246,0.2)",
+                          color: "#e8f0f8",
                           fontFamily: "'Roboto', sans-serif",
                         }}
-                        onFocus={e => (e.target.style.borderColor = "rgba(201,168,76,0.6)")}
-                        onBlur={e => (e.target.style.borderColor = "rgba(201,168,76,0.2)")}
+                        onFocus={e => (e.target.style.borderColor = "rgba(249,115,22,0.6)")}
+                        onBlur={e => (e.target.style.borderColor = "rgba(59,130,246,0.2)")}
                       />
                     </div>
 
@@ -525,7 +525,7 @@ export default function Index() {
                     <div key={i} className="flex items-start gap-4">
                       <div
                         className="w-10 h-10 flex items-center justify-center flex-shrink-0"
-                        style={{ background: "rgba(201,168,76,0.08)", border: "1px solid rgba(201,168,76,0.2)" }}
+                        style={{ background: "rgba(249,115,22,0.08)", border: "1px solid rgba(249,115,22,0.2)" }}
                       >
                         <Icon name={c.icon} size={18} color="var(--gold)" />
                       </div>
@@ -533,7 +533,7 @@ export default function Index() {
                         <div className="text-xs uppercase tracking-wider mb-0.5" style={{ color: "var(--steel)", fontFamily: "'Oswald', sans-serif" }}>
                           {c.label}
                         </div>
-                        <div className="text-sm" style={{ color: "#D4C9B0" }}>{c.val}</div>
+                        <div className="text-sm" style={{ color: "#e8f0f8" }}>{c.val}</div>
                       </div>
                     </div>
                   ))}
@@ -561,11 +561,11 @@ export default function Index() {
         <span className="text-2xl font-bold" style={{ color: "var(--gold)" }}>
           0{currentSection + 1}
         </span>
-        <span style={{ color: "rgba(212,201,176,0.3)" }}>/</span>
-        <span className="text-sm" style={{ color: "rgba(212,201,176,0.3)" }}>
+        <span style={{ color: "rgba(232,240,248,0.3)" }}>/</span>
+        <span className="text-sm" style={{ color: "rgba(232,240,248,0.3)" }}>
           0{SECTIONS.length}
         </span>
-        <span className="text-xs tracking-widest uppercase ml-2 hidden md:block" style={{ color: "rgba(212,201,176,0.4)" }}>
+        <span className="text-xs tracking-widest uppercase ml-2 hidden md:block" style={{ color: "rgba(232,240,248,0.4)" }}>
           {SECTIONS[currentSection]}
         </span>
       </div>
