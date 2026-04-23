@@ -7,11 +7,11 @@ const SECTIONS = ["Главная", "О продукте", "Характерис
 
 const specs = [
   { icon: "Thermometer", label: "Рабочая температура", value: "-60°С до +350°С" },
-  { icon: "Gauge", label: "Снижение трения", value: "до 70%" },
   { icon: "Shield", label: "Защита металла", value: "Плакирующий слой" },
   { icon: "Clock", label: "Срок действия", value: "до 100 000 км" },
   { icon: "Droplets", label: "Расход на двигатель", value: "100–200 мл" },
   { icon: "Zap", label: "Совместимость", value: "Все типы масел" },
+  { icon: "Layers", label: "Эффект безызносности", value: "Устранение износа" },
 ];
 
 const applications = [
@@ -208,91 +208,96 @@ export default function Index() {
         <section
           className="h-scroll-section"
           style={{
-            background: `linear-gradient(135deg, rgba(10,10,10,0.92) 0%, rgba(20,18,14,0.88) 100%), url(${BG_IMAGE}) center/cover no-repeat`,
+            background: `linear-gradient(135deg, rgba(10,10,10,0.95) 0%, rgba(20,18,14,0.92) 100%), url(${BG_IMAGE}) center/cover no-repeat`,
             scrollSnapAlign: "start",
           }}
         >
-          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.06) 0%, transparent 60%)" }} />
+          <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.05) 0%, transparent 60%)" }} />
 
-          <div className="relative z-10 flex items-center h-full px-16 md:px-24 gap-20">
-            <div className="flex-1 max-w-xl">
-              <div className="heading-line mb-4">
-                <span className="text-xs tracking-widest uppercase" style={{ color: "var(--gold)", fontFamily: "'Oswald', sans-serif" }}>
-                  О продукте
-                </span>
-              </div>
-              <h2
-                className="text-5xl md:text-6xl font-bold uppercase mb-8"
-                style={{ fontFamily: "'Oswald', sans-serif", lineHeight: 1, color: "#fff" }}
-              >
-                Технология <span className="gold-text">нового</span> поколения
-              </h2>
-              <p className="mb-6 text-base leading-relaxed" style={{ color: "rgba(212, 201, 176, 0.7)", fontWeight: 300 }}>
-                Композиция содержит активные компоненты на основе металлоорганических соединений,
-                которые при контакте с нагретыми поверхностями трения образуют прочный сервовитный
-                (плакирующий) слой толщиной 1–5 микрон.
-              </p>
-              <p className="mb-10 text-base leading-relaxed" style={{ color: "rgba(212, 201, 176, 0.7)", fontWeight: 300 }}>
-                Этот слой обладает уникальными антифрикционными свойствами, выдерживает экстремальные
-                нагрузки и восстанавливает изношенные поверхности без разборки агрегата.
-              </p>
+          <div className="relative z-10 flex flex-col justify-center h-full px-16 md:px-24">
+            <div className="heading-line mb-3">
+              <span className="text-xs tracking-widest uppercase" style={{ color: "var(--gold)", fontFamily: "'Oswald', sans-serif" }}>
+                О продукте
+              </span>
+            </div>
+            <h2
+              className="text-4xl md:text-5xl font-bold uppercase mb-8"
+              style={{ fontFamily: "'Oswald', sans-serif", lineHeight: 1, color: "#fff" }}
+            >
+              Линейка <span className="gold-text">продуктов</span>
+            </h2>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl">
               {[
-                "Работает с любыми минеральными и синтетическими маслами",
-                "Не требует замены масла — добавляется в существующее",
-                "Эффект сохраняется после замены масла",
-                "Сертифицировано по стандартам ГОСТ и ISO",
-              ].map((f, i) => (
-                <div key={i} className="flex items-start gap-3 mb-3">
-                  <div className="w-4 h-4 rounded-full flex items-center justify-center mt-0.5 flex-shrink-0"
-                    style={{ background: "rgba(201,168,76,0.15)", border: "1px solid var(--gold)" }}>
-                    <Icon name="Check" size={10} color="var(--gold)" />
+                {
+                  code: "СТ 104",
+                  type: "Жидкость",
+                  color: "зелёная",
+                  icon: "FlaskConical",
+                  title: "Плакирующая, смазывающая композиция",
+                  apply: "Добавка в СМ МКПП, раздаток, редукторов",
+                  desc: "Ионосодержащий продукт на аминокислотной основе. Образует разделительную плёнку в зоне контакта пар трения.",
+                  perks: ["Не смывается водой", "Любые типы металлов и сплавов", "Срок эксплуатации СМ ×2", "Ресурс без проблем ×7–8", "Снижает нагрев на 15–20°С"],
+                },
+                {
+                  code: "ПТ 105",
+                  type: "Жидкость",
+                  color: "зелёная",
+                  icon: "Fuel",
+                  title: "Моющая, смазывающая композиция",
+                  apply: "Добавка в бензин или дизельное топливо",
+                  desc: "Создаёт избирательный перенос — самопроизвольное образование тонкой неокисляющейся плёнки с низким сопротивлением сдвигу.",
+                  perks: ["Повышенные моющие свойства", "Нет резус-конфликта с СМ", "Безопасна для человека"],
+                },
+                {
+                  code: "СЕ 102",
+                  type: "Жидкость",
+                  color: "зелёная",
+                  icon: "Droplets",
+                  title: "Моющая, смазывающая композиция",
+                  apply: "Добавка в смазочные материалы (СМ)",
+                  desc: "Образует тонкую металлическую плёнку в зоне контакта, повышает износостойкость поверхности до двух порядков.",
+                  perks: ["Не смывается водой", "Металл, тефлон, РТИ", "Срок эксплуатации СМ ×2", "Повышенные моющие свойства", "Безопасна для человека"],
+                },
+                {
+                  code: "СТ Н4",
+                  type: "Пластичная",
+                  color: "мазь зелёная",
+                  icon: "Shield",
+                  title: "Пластичная плакировочная смазывающая композиция",
+                  apply: "Для узлов трения всех типов",
+                  desc: "Мазеподобный продукт. Образует тонкую металлическую плёнку, повышает износостойкость поверхности до двух порядков.",
+                  perks: ["Не смывается водой", "Металл, тефлон, РТИ", "Нет резус-конфликта с СМ"],
+                },
+              ].map((p, i) => (
+                <div
+                  key={i}
+                  className="spec-card p-5 flex flex-col"
+                  style={{ borderColor: "rgba(201,168,76,0.25)" }}
+                >
+                  <div className="flex items-center gap-3 mb-3 pb-3" style={{ borderBottom: "1px solid rgba(201,168,76,0.15)" }}>
+                    <div className="w-9 h-9 rounded flex items-center justify-center flex-shrink-0"
+                      style={{ background: "rgba(201,168,76,0.12)", border: "1px solid rgba(201,168,76,0.3)" }}>
+                      <Icon name={p.icon} size={18} color="var(--gold)" />
+                    </div>
+                    <div>
+                      <div className="text-lg font-bold gold-text leading-none" style={{ fontFamily: "'Oswald', sans-serif" }}>{p.code}</div>
+                      <div className="text-xs" style={{ color: "var(--steel)" }}>{p.type}</div>
+                    </div>
                   </div>
-                  <span className="text-sm" style={{ color: "rgba(212, 201, 176, 0.8)" }}>{f}</span>
+                  <div className="text-xs font-semibold uppercase tracking-wide mb-1 text-white" style={{ fontFamily: "'Oswald', sans-serif" }}>{p.title}</div>
+                  <div className="text-xs mb-3" style={{ color: "var(--gold)", opacity: 0.8 }}>{p.apply}</div>
+                  <p className="text-xs leading-relaxed mb-4 flex-1" style={{ color: "rgba(212,201,176,0.6)" }}>{p.desc}</p>
+                  <div className="space-y-1.5">
+                    {p.perks.map((perk, j) => (
+                      <div key={j} className="flex items-start gap-2">
+                        <Icon name="Check" size={10} color="var(--gold)" />
+                        <span className="text-xs" style={{ color: "rgba(212,201,176,0.75)" }}>{perk}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
-            </div>
-
-            <div className="hidden lg:block flex-1 max-w-sm">
-              <div
-                className="relative p-8 corner-tl corner-br"
-                style={{
-                  background: "linear-gradient(135deg, rgba(201,168,76,0.08) 0%, rgba(255,255,255,0.02) 100%)",
-                  border: "1px solid rgba(201,168,76,0.2)",
-                }}
-              >
-                <div className="text-center mb-6 pb-6" style={{ borderBottom: "1px solid rgba(201,168,76,0.2)" }}>
-                  <div
-                    className="w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center"
-                    style={{ background: "linear-gradient(135deg, rgba(201,168,76,0.2), rgba(201,168,76,0.05))", border: "2px solid rgba(201,168,76,0.4)" }}
-                  >
-                    <Icon name="FlaskConical" size={36} color="var(--gold)" />
-                  </div>
-                  <div className="gold-text text-2xl font-bold" style={{ fontFamily: "'Oswald', sans-serif" }}>
-                    СОСТАВ
-                  </div>
-                </div>
-
-                {[
-                  { label: "Металлоорганика", pct: 85 },
-                  { label: "Модификаторы трения", pct: 70 },
-                  { label: "Антиоксиданты", pct: 55 },
-                  { label: "Синергисты", pct: 40 },
-                ].map((item, i) => (
-                  <div key={i} className="mb-4">
-                    <div className="flex justify-between text-xs mb-1" style={{ color: "rgba(212,201,176,0.7)" }}>
-                      <span>{item.label}</span>
-                      <span style={{ color: "var(--gold)" }}>{item.pct}%</span>
-                    </div>
-                    <div className="h-1 rounded-full" style={{ background: "rgba(255,255,255,0.08)" }}>
-                      <div
-                        className="h-full rounded-full"
-                        style={{ width: `${item.pct}%`, background: "linear-gradient(90deg, var(--gold), #E8C96A)" }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </section>
