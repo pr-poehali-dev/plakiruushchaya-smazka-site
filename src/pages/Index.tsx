@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "@/components/ui/icon";
 
+const SEND_EMAIL_URL = "https://functions.poehali.dev/1afffe12-d34d-4a33-a042-0901e066a947";
+
 const BG_IMAGE = "https://cdn.poehali.dev/projects/613015e9-5a04-4be5-8e21-6245ef31f3c9/files/462d2188-7bf7-49b8-b83b-1b4a84861263.jpg";
 
 const SECTIONS = ["Главная", "О продукте", "Характеристики", "Применение", "Контакты"];
@@ -45,6 +47,24 @@ export default function Index() {
   const [currentSection, setCurrentSection] = useState(0);
   const [isScrolling, setIsScrolling] = useState(false);
   const scrollTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const [formData, setFormData] = useState({ name: "", phone: "", email: "", message: "" });
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleFormSubmit = async () => {
+    if (!formData.name.trim()) { setFormStatus("error"); return; }
+    setFormStatus("sending");
+    try {
+      const res = await fetch(SEND_EMAIL_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ mode: "form", ...formData }),
+      });
+      const data = await res.json();
+      if (data.success) { setFormStatus("success"); setFormData({ name: "", phone: "", email: "", message: "" }); }
+      else setFormStatus("error");
+    } catch { setFormStatus("error"); }
+  };
 
   const scrollToSection = (index: number) => {
     if (!containerRef.current) return;
@@ -456,9 +476,9 @@ export default function Index() {
                 >
                   <div className="space-y-4">
                     {[
-                      { label: "Имя", placeholder: "Ваше имя", type: "text" },
-                      { label: "Телефон", placeholder: "+7 (___) ___-__-__", type: "tel" },
-                      { label: "Email", placeholder: "mail@company.ru", type: "email" },
+                      { label: "Имя", placeholder: "Ваше имя", type: "text", key: "name" as const },
+                      { label: "Телефон", placeholder: "+7 (___) ___-__-__", type: "tel", key: "phone" as const },
+                      { label: "Email", placeholder: "mail@company.ru", type: "email", key: "email" as const },
                     ].map((field, i) => (
                       <div key={i}>
                         <label
@@ -470,6 +490,8 @@ export default function Index() {
                         <input
                           type={field.type}
                           placeholder={field.placeholder}
+                          value={formData[field.key]}
+                          onChange={e => setFormData(prev => ({ ...prev, [field.key]: e.target.value }))}
                           className="w-full px-4 py-3 text-sm outline-none transition-all"
                           style={{
                             background: "rgba(255,255,255,0.04)",
@@ -493,6 +515,8 @@ export default function Index() {
                       <textarea
                         rows={3}
                         placeholder="Расскажите о вашей задаче..."
+                        value={formData.message}
+                        onChange={e => setFormData(prev => ({ ...prev, message: e.target.value }))}
                         className="w-full px-4 py-3 text-sm outline-none resize-none transition-all"
                         style={{
                           background: "rgba(255,255,255,0.04)",
@@ -505,8 +529,23 @@ export default function Index() {
                       />
                     </div>
 
-                    <button className="btn-gold w-full mt-2">
-                      Отправить заявку
+                    {formStatus === "success" && (
+                      <div className="text-sm text-center py-2" style={{ color: "#4ade80" }}>
+                        Заявка отправлена! Ответим в течение рабочего дня.
+                      </div>
+                    )}
+                    {formStatus === "error" && (
+                      <div className="text-sm text-center py-2" style={{ color: "#f87171" }}>
+                        Ошибка отправки. Проверьте имя или попробуйте позже.
+                      </div>
+                    )}
+
+                    <button
+                      className="btn-gold w-full mt-2"
+                      onClick={handleFormSubmit}
+                      disabled={formStatus === "sending"}
+                    >
+                      {formStatus === "sending" ? "Отправка..." : "Отправить заявку"}
                     </button>
                   </div>
                 </div>
