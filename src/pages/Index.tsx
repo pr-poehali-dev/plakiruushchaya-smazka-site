@@ -6,10 +6,11 @@ const BG_IMAGE = "https://cdn.poehali.dev/projects/613015e9-5a04-4be5-8e21-6245e
 const SECTIONS = ["Главная", "О продукте", "Характеристики", "Применение", "Контакты"];
 
 const specs = [
-  { icon: "Shield", label: "Защита и восстановление трущихся поверхностей", value: "Плакирующий слой" },
+  { icon: "Thermometer", label: "Рабочая температура", value: "-60°С до +350°С" },
+  { icon: "Shield", label: "Защита металла", value: "Плакирующий слой" },
   { icon: "Clock", label: "Срок действия", value: "до 100 000 км" },
-  { icon: "Droplets", label: "Расход", value: "от 5–50 мл на 1 л масла/топлива" },
-  { icon: "Zap", label: "Совместимость", value: "Полная совместимость" },
+  { icon: "Droplets", label: "Расход на двигатель", value: "100–200 мл" },
+  { icon: "Zap", label: "Совместимость", value: "Все типы масел" },
   { icon: "Layers", label: "Эффект безызносности", value: "Устранение износа" },
 ];
 
