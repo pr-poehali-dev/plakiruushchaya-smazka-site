@@ -513,10 +513,11 @@ export default function Index() {
 
                 <div className="flex flex-col justify-center gap-6">
                   {[
-                    { icon: "Phone", label: "Телефон", val: "+7 988 525 52 82" },
-                    { icon: "Mail", label: "Email", val: "5sveteslav5@gmail.com" },
-                    { icon: "MapPin", label: "Адрес", val: "Краснодарский край, Северский район, ул. Вокзальная, 58" },
-                    { icon: "Clock3", label: "Режим работы", val: "Пн–Пт: 9:00 – 18:00" },
+                    { icon: "Phone", label: "Телефон", val: "+7 989 290 44 88", link: "tel:+79892904488" },
+                    { icon: "Mail", label: "Email", val: "5sveteslav5@gmail.com", link: "mailto:5sveteslav5@gmail.com" },
+                    { icon: "MapPin", label: "Адрес", val: "Краснодарский край, ст. Северский", link: null },
+                    { icon: "Clock3", label: "Режим работы", val: "Пн–Пт: 9:00 – 18:00", link: null },
+                    { icon: "Send", label: "Telegram", val: "@Unnecessary05", link: "https://t.me/Unnecessary05" },
                   ].map((c, i) => (
                     <div key={i} className="flex items-start gap-4">
                       <div
@@ -529,7 +530,11 @@ export default function Index() {
                         <div className="text-xs uppercase tracking-wider mb-0.5" style={{ color: "var(--steel)", fontFamily: "'Oswald', sans-serif" }}>
                           {c.label}
                         </div>
-                        <div className="text-sm" style={{ color: "#e8f0f8" }}>{c.val}</div>
+                        {c.link ? (
+                          <a href={c.link} target="_blank" rel="noopener noreferrer" className="text-sm hover:underline" style={{ color: "#e8f0f8" }}>{c.val}</a>
+                        ) : (
+                          <div className="text-sm" style={{ color: "#e8f0f8" }}>{c.val}</div>
+                        )}
                       </div>
                     </div>
                   ))}
